@@ -44,7 +44,7 @@ export default function FilteredNewsPage({ params }) {
 
               return (
                 <li key={link}>
-                  <span className=" block text-center ">
+                  <span className=" block text-center m-8 ">
                     <Link
                       href={href}
                       className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-cyan-400 to-green-500"
