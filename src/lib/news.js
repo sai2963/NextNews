@@ -19,7 +19,7 @@ export function getAvailableNewsMonths(year) {
   return DUMMY_NEWS.reduce((months, news) => {
     const newsYear = new Date(news.date).getFullYear();
     if (newsYear === +year) {
-      const month = new Date(news.date).toLocaleString('default', { month: 'long' });
+      const month = new Date(news.date).getMonth();
       if (!months.includes(month)) {
         months.push(month + 1);
       }
@@ -36,7 +36,7 @@ export function getNewsForYear(year) {
 export function getNewsForYearAndMonth(year, month) {
   return DUMMY_NEWS.filter((news) => {
     const newsYear = new Date(news.date).getFullYear();
-    const newsMonth = new Date(news.date).toLocaleString('default', { month: 'long' });
+    const newsMonth = new Date(news.date).getMonth() + 1;
     return newsYear === +year && newsMonth === +month;
   });
 }

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import NavLink from './nav-link';
 
 
 export default function Mainheader() {
@@ -8,13 +9,13 @@ export default function Mainheader() {
         <div className=" text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
           <Link href="/">NextNews</Link>
         </div>
-        <ul className="flex space-x-8 text-black text-lg font-semibold">
+        <ul className="flex space-x-8 text-gr text-lg font-semibold">
           
-          <li className="hover:text-gray-300 transition duration-300">
-          <Link href="/news">News</Link>
+        <li className="hover:text-gray-300 transition duration-300">
+          <NavLink href="/news">News</NavLink>
           </li>
           <li className="hover:text-gray-300 transition duration-300">
-          <Link href="/archive">Archive</Link>
+          <NavLink href="/archive">Archive</NavLink>
           </li>
         </ul>
       </nav>
