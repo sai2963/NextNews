@@ -1,9 +1,9 @@
 import NewsList from "@/components/news-list";
 
 async function getData() {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  const res = await fetch("http://localhost:8080/news", { cache: "no-store" });
+  const res = await fetch("http://localhost:8080/news");
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");

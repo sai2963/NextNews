@@ -31,20 +31,21 @@ export default async function FilteredNewsPage({ params }) {
 
   // Validate selected year and month
   if (selectedYear && !availableNewsYears.includes(parseInt(selectedYear))) {
-    throw new Error('Invalid Year');
+    throw new Error('No News found  for selected Year');
   }
 
   if (selectedYear && selectedMonth) {
     const availableMonths = await getAvailableNewsMonths(selectedYear);
     if (!availableMonths.includes(parseInt(selectedMonth))) {
-      throw new Error('Invalid Month');
+      throw new Error('No News found  for selected month');
     }
   }
 
-  let newsContent = <p>No News Found for Selected Period</p>;
+  let newsContent ;
   if (news && news.length > 0) {
     newsContent = <News_List news={news} />;
   }
+  
 
   return (
     <div>

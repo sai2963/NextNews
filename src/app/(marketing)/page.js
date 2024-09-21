@@ -4,11 +4,15 @@ import { DUMMY_NEWS } from "@/dummy-news"; // Assume you're importing this
 import NewsList from "@/components/news-list";
 
 export default async function HomePage() {
+  
   const response= await fetch('http://localhost:8080/news');
   if(!response){
     throw new error('Failed to fetch news')
   }
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   const news=await response.json()
+ 
+  
   return (
     <div className="min-h-screen bg-black text-white">
      
